@@ -151,7 +151,7 @@ python whoami.py --version                # show version information
 No setup required. Just clone and run:
 
 ```bash
-git clone https://github.com/yourusername/python-coreutils.git
+git clone https://github.com/Junaid433/PYCoreUtils.git
 cd python-coreutils
 
 python mkdir.py --help
