@@ -35,7 +35,7 @@ It’s perfect for:
 | `tail`     | ⏳ TODO |
 | `date`     | ⏳ TODO |
 | `echo`     | ✅ DONE |
-| `whoami`   | ⏳ TODO |
+| `whoami`   | ✅ DONE |
 | `pwd`      | ⏳ TODO |
 | `chmod`    | ⏳ TODO |
 
@@ -102,6 +102,14 @@ python echo.py -e "Bell\a"                # Bell (might trigger a terminal beep)
 python echo.py -e "Stop here\cIgnored"    # Stop here (output stops at \c)
 python echo.py -e "\x41\x42\x43"          # ABC (hex codes)
 python echo.py -e "\101\102\103"          # ABC (octal codes)
+```
+
+### `whoami` – Print current user name
+
+```bash
+python whoami.py                          # outputs current username
+python whoami.py --help                   # show help information
+python whoami.py --version                # show version information
 ```
 ---
 
