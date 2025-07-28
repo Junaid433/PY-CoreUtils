@@ -34,7 +34,7 @@ It’s perfect for:
 | `head`     | ⏳ TODO |
 | `tail`     | ⏳ TODO |
 | `date`     | ⏳ TODO |
-| `echo`     | ⏳ TODO |
+| `echo`     | ✅ DONE |
 | `whoami`   | ⏳ TODO |
 | `pwd`      | ⏳ TODO |
 | `chmod`    | ⏳ TODO |
@@ -89,6 +89,19 @@ python touch.py file.txt                  # create or update
 python touch.py -d "2 hours ago" file     # set relative time
 python touch.py -r ref.txt file           # copy timestamp
 python touch.py -t 202501011200 file      # exact datetime
+```
+
+### `echo` – Display a line of text
+
+```bash
+python echo.py "Hello World"              # Hello World
+python echo.py -n "No newline"            # No newline (no trailing newline)
+python echo.py -e "Line 1\nLine 2"        # Line 1 followed by Line 2 on new line
+python echo.py -e "Tab\there"             # Tab    here
+python echo.py -e "Bell\a"                # Bell (might trigger a terminal beep)
+python echo.py -e "Stop here\cIgnored"    # Stop here (output stops at \c)
+python echo.py -e "\x41\x42\x43"          # ABC (hex codes)
+python echo.py -e "\101\102\103"          # ABC (octal codes)
 ```
 
 ---
