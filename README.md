@@ -103,7 +103,6 @@ python echo.py -e "Stop here\cIgnored"    # Stop here (output stops at \c)
 python echo.py -e "\x41\x42\x43"          # ABC (hex codes)
 python echo.py -e "\101\102\103"          # ABC (octal codes)
 ```
-
 ---
 
 ## 🧠 Implementation Highlights
