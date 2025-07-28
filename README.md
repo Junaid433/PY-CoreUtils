@@ -1,5 +1,3 @@
----
-
 # 🐍 Python Coreutils – GNU Coreutils Rewritten in Pure Python
 
 > A cross-platform, pure Python implementation of essential [GNU Coreutils](https://www.gnu.org/software/coreutils/). This project offers a drop-in alternative for developers seeking CLI tools compatible with Windows, macOS, and Linux.
@@ -174,5 +172,3 @@ Licensed under the [GNU GPL v3 or later](https://www.gnu.org/licenses/gpl-3.0.ht
 ## 🔍 Keywords
 
 `gnu coreutils` `python coreutils` `unix utilities` `cross-platform cli` `command-line tools` `mkdir in python` `basename` `touch` `chmod` `pure python` `no dependencies` `drop-in replacement` `coreutils alternative` `cli tools`
-
----
