@@ -31,7 +31,7 @@ jobs:
             nuitka --onefile --output-dir=build --output-filename=$base "$f"
           done
           cd build
-          zip -r ../release.zip .
+          zip -r release.zip .
           cd ..
 
       - name: Create GitHub Release and Upload Asset
