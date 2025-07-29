@@ -1,6 +1,6 @@
 ---
 name: "❓ Question / Help"
-about: Ask a question or get help with PYCoreUtils
+about: Ask a question or get help with PY-CoreUtils
 labels: question
 ---
 

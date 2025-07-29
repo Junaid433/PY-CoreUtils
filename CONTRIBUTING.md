@@ -1,4 +1,4 @@
-# Contributing to PYCoreUtils
+# Contributing to PY-CoreUtils
 
 First off, thanks for your interest in contributing! 🎉
 
@@ -47,7 +47,7 @@ We welcome all contributions—code, docs, tests, ideas, and bug reports.
 
 ## 📝 Reporting Bugs & Suggesting Features
 
-- Use [GitHub Issues](https://github.com/Junaid433/PYCoreUtils/issues) to report bugs or request features.
+- Use [GitHub Issues](https://github.com/Junaid433/PY-CoreUtils/issues) to report bugs or request features.
 - Please include steps to reproduce, expected behavior, and screenshots or CLI output if possible.
 
 ---
@@ -60,4 +60,4 @@ We welcome all contributions—code, docs, tests, ideas, and bug reports.
 
 ---
 
-Thank you for helping make PYCoreUtils awesome! 🚀
+Thank you for helping make PY-CoreUtils awesome! 🚀

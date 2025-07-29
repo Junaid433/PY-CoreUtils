@@ -2,11 +2,11 @@ cu# Security Policy
 
 ## Supported Versions
 
-We currently support the latest major version of PYCoreUtils. Please update to the latest version before reporting security issues.
+We currently support the latest major version of PY-CoreUtils. Please update to the latest version before reporting security issues.
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in PYCoreUtils:
+If you discover a security vulnerability in PY-CoreUtils:
 
 - **Do not open a public issue.**
 - Email the maintainer directly at: **junaid.cloud2@gmail.com**
@@ -24,4 +24,4 @@ We will respond as quickly as possible and coordinate a fix and disclosure.
 - We will investigate and aim to provide a fix or mitigation within 30 days.
 - We will credit you in the release notes if you wish.
 
-Thank you for helping keep PYCoreUtils and its users safe!
+Thank you for helping keep PY-CoreUtils and its users safe!

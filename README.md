@@ -1,13 +1,13 @@
 <div align="center">
 
-# 🐍✨ PYCoreUtils
+# 🐍✨ PY-CoreUtils
 
 **The Modern, Cross-Platform Python Port of GNU Coreutils**
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/)
-[![CI](https://github.com/Junaid433/PYCoreUtils/actions/workflows/python-tests.yml/badge.svg)](https://github.com/Junaid433/PYCoreUtils/actions)
-[![Open Issues](https://img.shields.io/github/issues/Junaid433/PYCoreUtils?color=orange)](https://github.com/Junaid433/PYCoreUtils/issues)
+[![CI](https://github.com/Junaid433/PY-CoreUtils/actions/workflows/python-tests.yml/badge.svg)](https://github.com/Junaid433/PY-CoreUtils/actions)
+[![Open Issues](https://img.shields.io/github/issues/Junaid433/PY-CoreUtils?color=orange)](https://github.com/Junaid433/PY-CoreUtils/issues)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 </div>
@@ -18,7 +18,7 @@
 
 ---
 
-## 🌟 Why PYCoreUtils?
+## 🌟 Why PY-CoreUtils?
 
 - 🖥️ **Cross-platform**: Linux, macOS, Windows — no C toolchain needed.
 - 🧩 **Drop-in CLI tools**: Familiar commands, same flags, same output.
@@ -32,8 +32,8 @@
 
 ```bash
 # Clone and run any tool instantly!
-git clone https://github.com/Junaid433/PYCoreUtils.git
-cd PYCoreUtils
+git clone https://github.com/Junaid433/PY-CoreUtils.git
+cd PY-CoreUtils
 python src/mkdir.py --help
 python src/rm.py --help
 python src/date.py --help
@@ -120,7 +120,7 @@ $ python src/echo.py -e "Hello\nWorld!"
 - **Date/time power**: `date` supports parsing, formatting, reference file, UTC, batch, and more.
 - **Safe & robust**: `rm` has interactive, force, and recursive modes.
 - **No C, no build, no nonsense**: Just Python.
-- **100% pytest coverage** and [GitHub Actions](https://github.com/Junaid433/PYCoreUtils/actions) CI.
+- **100% pytest coverage** and [GitHub Actions](https://github.com/Junaid433/PY-CoreUtils/actions) CI.
 
 ---
 
@@ -148,8 +148,8 @@ $ python src/echo.py -e "Hello\nWorld!"
 > - [Contributing Guide](CONTRIBUTING.md)
 > - [Code of Conduct](CODE_OF_CONDUCT.md)
 > - [Security Policy](SECURITY.md)
-> - [Open Issues](https://github.com/Junaid433/PYCoreUtils/issues)
-> - [Discussions](https://github.com/Junaid433/PYCoreUtils/discussions)
+> - [Open Issues](https://github.com/Junaid433/PY-CoreUtils/issues)
+> - [Discussions](https://github.com/Junaid433/PY-CoreUtils/discussions)
 
 Star ⭐ the repo, share it, and help us build the best Python-powered coreutils!
 
@@ -157,7 +157,7 @@ Star ⭐ the repo, share it, and help us build the best Python-powered coreutils
 
 ## 💡 Did you know?
 
-> You can use PYCoreUtils as a teaching tool, a scripting Swiss Army knife, or even as a base for your own Python CLI projects. Fork it, hack it, and make it yours!
+> You can use PY-CoreUtils as a teaching tool, a scripting Swiss Army knife, or even as a base for your own Python CLI projects. Fork it, hack it, and make it yours!
 
 ---
 

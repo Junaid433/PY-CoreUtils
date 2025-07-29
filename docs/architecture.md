@@ -1,15 +1,15 @@
-# 🏗️ Project Architecture – PYCoreUtils
+# 🏗️ Project Architecture – PY-CoreUtils
 
 ## Overview
 
-PYCoreUtils is a modular, cross-platform Python port of GNU coreutils. Each utility is a standalone script in `src/`, designed for CLI use and easy extension. The project is organized for clarity, hackability, and testability.
+PY-CoreUtils is a modular, cross-platform Python port of GNU coreutils. Each utility is a standalone script in `src/`, designed for CLI use and easy extension. The project is organized for clarity, hackability, and testability.
 
 ---
 
 ## Directory Structure
 
 ```
-PYCoreUtils/
+PY-CoreUtils/
 ├── src/                # All main CLI utilities (one file per command)
 ├── tests/              # CLI and unit tests for each command
 ├── docs/               # Documentation (usage, features, architecture, ...)
@@ -104,4 +104,4 @@ if __name__ == '__main__':
 ## Got Questions?
 
 - See [CONTRIBUTING.md](../CONTRIBUTING.md) for how to get started.
-- Open a [discussion](https://github.com/Junaid433/PYCoreUtils/discussions) or [issue](https://github.com/Junaid433/PYCoreUtils/issues) if you want to propose a change or ask about the architecture!
+- Open a [discussion](https://github.com/Junaid433/PY-CoreUtils/discussions) or [issue](https://github.com/Junaid433/PY-CoreUtils/issues) if you want to propose a change or ask about the architecture!
