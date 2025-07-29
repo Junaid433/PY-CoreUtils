@@ -9,7 +9,7 @@ We currently support the latest major version of PYCoreUtils. Please update to t
 If you discover a security vulnerability in PYCoreUtils:
 
 - **Do not open a public issue.**
-- Email the maintainer directly at: **junaidrahman433@gmail.com**
+- Email the maintainer directly at: **junaid.cloud2@gmail.com**
 - Please include:
   - A description of the vulnerability
   - Steps to reproduce
