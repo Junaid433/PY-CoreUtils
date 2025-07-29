@@ -46,10 +46,10 @@ python date.py --help
 | `mkdir`      | ✅     |  | `echo`     | ✅     |
 | `touch`      | ✅     |  | `whoami`   | ✅     |
 | `rm`         | ✅     |  | `pwd`      | ✅     |
-| `ls`         | ⏳     |  | `cp`       | ⏳     |
-| `mv`         | ⏳     |  | `cat`      | ⏳     |
-| `head`       | ⏳     |  | `tail`     | ⏳     |
-| `chmod`      | ⏳     |  |            |        |
+| `unlink`     | ⏳     |  | `link`     | ⏳     |
+| `uptime`     | ⏳     |  | `groups`   | ⏳     |
+| `users`      | ⏳     |  | `ls`       | ⏳     |
+| `kill`       | ⏳     |  |            |        |
 
 ---
 
