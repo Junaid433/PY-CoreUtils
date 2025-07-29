@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/Junaid433/PYCoreUtils/main/docs/banner.png" alt="PYCoreUtils Banner" width="600"/>
+
 # 🐍 PYCoreUtils
 
 **The Modern, Cross-Platform Python Port of GNU Coreutils**
@@ -12,7 +14,8 @@
 
 ---
 
-> **✨ Unix CLI power, Pythonic flexibility. Run coreutils anywhere.**
+> <img src="https://img.shields.io/badge/Unix%20CLI%20Power-Pythonic%20Flexibility-blueviolet?style=flat-square"/>  
+> <b>✨ Run coreutils anywhere. Hackable, readable, and fun.</b>
 
 ---
 
@@ -29,6 +32,7 @@
 ## 🛠️ Quick Start
 
 ```bash
+# Clone and run any tool instantly!
 git clone https://github.com/Junaid433/PYCoreUtils.git
 cd PYCoreUtils
 python src/mkdir.py --help
@@ -53,7 +57,17 @@ python src/date.py --help
 
 ---
 
-## 🌈 CLI Showcase
+## 🌈 Screenshots & Demo
+
+> <b>Real CLI output, real Python code.</b>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Junaid433/PYCoreUtils/main/docs/demo_rm.png" alt="rm demo" width="500"/>
+  <img src="https://raw.githubusercontent.com/Junaid433/PYCoreUtils/main/docs/demo_date.png" alt="date demo" width="500"/>
+</p>
+
+<details>
+<summary>Show CLI Examples</summary>
 
 ```bash
 $ python src/rm.py -rf build/
@@ -63,6 +77,7 @@ $ python src/pwd.py
 $ python src/basename.py /usr/bin/python3
 $ python src/echo.py -e "Hello\nWorld!"
 ```
+</details>
 
 ---
 
@@ -91,11 +106,17 @@ $ python src/echo.py -e "Hello\nWorld!"
 
 ---
 
-## 🤝 Community & Contributing
+## 💬 Get Involved!
 
-- Star ⭐ the repo if you like it!
-- PRs, issues, and feedback welcome.
-- See [CONTRIBUTING.md](CONTRIBUTING.md) (coming soon)
+> **We welcome all contributors—new and experienced!**
+>
+> - [Contributing Guide](CONTRIBUTING.md)
+> - [Code of Conduct](CODE_OF_CONDUCT.md)
+> - [Security Policy](SECURITY.md)
+> - [Open Issues](https://github.com/Junaid433/PYCoreUtils/issues)
+> - [Discussions](https://github.com/Junaid433/PYCoreUtils/discussions)
+
+Star ⭐ the repo, share it, and help us build the best Python-powered coreutils!
 
 ---
 
@@ -107,6 +128,8 @@ $ python src/echo.py -e "Hello\nWorld!"
 
 <div align="center">
 
-💡 **Hack, learn, and build with Python-powered coreutils!**
+<img src="https://raw.githubusercontent.com/Junaid433/PYCoreUtils/main/docs/vibe_footer.png" alt="PYCoreUtils Vibes" width="400"/>
+
+💡 <b>Hack, learn, and build with Python-powered coreutils!</b>
 
 </div>
