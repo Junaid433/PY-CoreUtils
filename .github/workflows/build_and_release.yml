@@ -38,6 +38,6 @@ jobs:
         with:
           tag_name: release-${{ github.ref_name }}-${{ github.sha }}
           name: Release ${{ github.ref_name }} @ ${{ github.sha }}
-          files: release.zip
+          files: build/release.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
