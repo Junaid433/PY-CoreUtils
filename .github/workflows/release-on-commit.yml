@@ -9,30 +9,30 @@ jobs:
   build-and-release:
     runs-on: ubuntu-latest
     steps:
-      - name: [1mCheckout repository[0m
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: [1mSet up Python 3.10[0m
+      - name: Set up Python 3.13
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.13'
 
-      - name: [1mUpgrade pip and install Nuitka[0m
+      - name: Upgrade pip and install Nuitka
         run: |
           python -m pip install --upgrade pip
           pip install nuitka
 
-      - name: [1mShow Nuitka version[0m
+      - name: Show Nuitka version
         run: nuitka --version
 
-      - name: [1mClean previous build artifacts[0m
+      - name: Clean previous build artifacts
         run: |
           rm -rf build release.zip || true
 
-      - name: [1mCreate build directory[0m
+      - name: Create build directory
         run: mkdir -p build
 
-      - name: [1mCompile all Python files in src/ with Nuitka[0m
+      - name: Compile all Python files in src/ with Nuitka
         run: |
           set -e
           for f in src/*.py; do
@@ -40,12 +40,12 @@ jobs:
             nuitka --onefile --output-dir=build "$f"
           done
 
-      - name: [1mList build directory contents[0m
+      - name: List build directory contents
         run: |
           echo "Contents of build directory:"
           ls -lh build
 
-      - name: [1mZip compiled binaries[0m
+      - name: Zip compiled binaries
         run: |
           cd build
           zip -r ../release.zip .
@@ -53,7 +53,7 @@ jobs:
           echo "Created release.zip with contents:"
           unzip -l release.zip
 
-      - name: [1mCreate GitHub Release and Upload Asset[0m
+      - name: Create GitHub Release and Upload Asset
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.sha }}
