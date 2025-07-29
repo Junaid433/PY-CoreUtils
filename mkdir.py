@@ -142,6 +142,7 @@ def make_directory(path, mode=None, parents=False, verbose=False, exists_ok=Fals
         
         if verbose:
             print(f'mkdir: created directory {path}')
+        return True
 
     except FileExistsError:
         if exists_ok or parents:
