@@ -34,7 +34,7 @@ It’s perfect for:
 | `cat`      | ⏳ TODO |
 | `head`     | ⏳ TODO |
 | `tail`     | ⏳ TODO |
-| `date`     | ⏳ TODO |
+| `date`     | ✅ DONE |
 | `echo`     | ✅ DONE |
 | `whoami`   | ✅ DONE |
 | `pwd`      | ⏳ TODO |
@@ -62,6 +62,7 @@ It’s perfect for:
 * `touch`: Legacy POSIX timestamp formats + relative dates
 * `basename`: Multiple file support and suffix stripping
 * `rm`: Full GNU-style recursive, interactive, and safe deletion
+* `date`: GNU-style formatting, parsing, reference file, UTC, batch, and locale support
 
 ---
 
@@ -94,6 +95,20 @@ python rm.py -r dir/                      # recursively remove directory
 python rm.py -rf dir/                     # force recursive removal
 python rm.py --                           # treat following args as files, not options
 python rm.py --help                       # show help information
+```
+
+### `date` – Print or set the system date and time
+
+```bash
+python date.py                            # print current date/time (matches GNU date)
+python date.py '+%Y-%m-%d %H:%M:%S'       # custom format
+python date.py -d '2024-01-01 12:00:00'   # parse date string
+python date.py -r file.txt                # show mtime of file.txt
+python date.py -u                         # UTC output
+python date.py -I                         # ISO 8601 output
+python date.py --rfc-3339 seconds         # RFC 3339 output
+python date.py -R                         # RFC 5322 (email) output
+python date.py --help                     # show help information
 ```
 
 ### `touch` – Update file timestamps
@@ -172,6 +187,7 @@ python mkdir.py --help
 python touch.py --help
 python basename.py --help
 python rm.py --help
+python date.py --help
 ```
 
 Or run individual scripts as needed.
@@ -221,4 +237,4 @@ Licensed under the [GNU GPL v3 or later](https://www.gnu.org/licenses/gpl-3.0.ht
 
 ## 🔍 Keywords
 
-`gnu coreutils` `python coreutils` `unix utilities` `cross-platform cli` `command-line tools` `mkdir in python` `basename` `touch` `chmod` `rm` `pure python` `no dependencies` `drop-in replacement` `coreutils alternative` `cli tools`
+`gnu coreutils` `python coreutils` `unix utilities` `cross-platform cli` `command-line tools` `mkdir in python` `basename` `touch` `chmod` `rm` `date` `pure python` `no dependencies` `drop-in replacement` `coreutils alternative` `cli tools`
