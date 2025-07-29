@@ -32,7 +32,6 @@ jobs:
           done
           cd build
           zip -r release.zip .
-          cd ..
 
       - name: Create GitHub Release and Upload Asset
         uses: softprops/action-gh-release@v2
