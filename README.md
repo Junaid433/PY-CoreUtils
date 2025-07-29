@@ -28,7 +28,7 @@ It’s perfect for:
 | `mkdir`    | ✅ DONE |
 | `touch`    | ✅ DONE |
 | `ls`       | ⏳ TODO |
-| `rm`       | ⏳ TODO |
+| `rm`       | ✅ DONE |
 | `cp`       | ⏳ TODO |
 | `mv`       | ⏳ TODO |
 | `cat`      | ⏳ TODO |
@@ -61,6 +61,7 @@ It’s perfect for:
 * `mkdir`: Full symbolic mode parsing (`u=rwx,g=rx,o=r`)
 * `touch`: Legacy POSIX timestamp formats + relative dates
 * `basename`: Multiple file support and suffix stripping
+* `rm`: Full GNU-style recursive, interactive, and safe deletion
 
 ---
 
@@ -81,6 +82,18 @@ python mkdir.py newdir                    # simple directory
 python mkdir.py -p a/b/c/d                # nested structure
 python mkdir.py -m 755 newdir             # numeric permissions
 python mkdir.py -m u=rwx,g=rx,o=r newdir  # symbolic permissions
+```
+
+### `rm` – Remove files and directories
+
+```bash
+python rm.py file.txt                     # remove a file
+python rm.py -f missing.txt               # ignore missing files
+python rm.py -i file.txt                  # prompt before removal
+python rm.py -r dir/                      # recursively remove directory
+python rm.py -rf dir/                     # force recursive removal
+python rm.py --                           # treat following args as files, not options
+python rm.py --help                       # show help information
 ```
 
 ### `touch` – Update file timestamps
@@ -158,6 +171,7 @@ cd PYCoreUtils
 python mkdir.py --help
 python touch.py --help
 python basename.py --help
+python rm.py --help
 ```
 
 Or run individual scripts as needed.
@@ -207,4 +221,4 @@ Licensed under the [GNU GPL v3 or later](https://www.gnu.org/licenses/gpl-3.0.ht
 
 ## 🔍 Keywords
 
-`gnu coreutils` `python coreutils` `unix utilities` `cross-platform cli` `command-line tools` `mkdir in python` `basename` `touch` `chmod` `pure python` `no dependencies` `drop-in replacement` `coreutils alternative` `cli tools`
+`gnu coreutils` `python coreutils` `unix utilities` `cross-platform cli` `command-line tools` `mkdir in python` `basename` `touch` `chmod` `rm` `pure python` `no dependencies` `drop-in replacement` `coreutils alternative` `cli tools`
