@@ -152,7 +152,7 @@ No setup required. Just clone and run:
 
 ```bash
 git clone https://github.com/Junaid433/PYCoreUtils.git
-cd python-coreutils
+cd PYCoreUtils
 
 python mkdir.py --help
 python touch.py --help
