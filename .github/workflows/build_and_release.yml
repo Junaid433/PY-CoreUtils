@@ -1,4 +1,4 @@
-name: Build and Release Binaries on Commit
+name: Build and Release Binaries
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
           mkdir -p build
           for f in src/*.py; do
             base=$(basename "$f" .py)
-            nuitka --onefile --output-dir=build --output-filename=build/$base "$f"
+            nuitka --onefile --output-dir=build --output-filename=$base "$f"
           done
           cd build
           zip -r ../release.zip .
