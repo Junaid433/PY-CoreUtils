@@ -22,42 +22,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install nuitka
 
-      - name: Show Nuitka version
-        run: nuitka --version
-
-      - name: Clean previous build artifacts
+      - name: Clean and build with Nuitka
         run: |
           rm -rf build release.zip || true
-
-      - name: Create build directory
-        run: mkdir -p build
-
-      - name: Compile all Python files in src/ with Nuitka
-        run: |
-          set -e
+          mkdir -p build
           for f in src/*.py; do
-            echo "Compiling $f..."
-            nuitka --onefile --output-dir=build "$f"
+            base=$(basename "$f" .py)
+            nuitka --onefile --output-dir=build --output-filename=build/$base "$f"
           done
-
-      - name: List build directory contents
-        run: |
-          echo "Contents of build directory:"
-          ls -lh build
-
-      - name: Zip compiled binaries
-        run: |
           cd build
           zip -r ../release.zip .
           cd ..
-          echo "Created release.zip with contents:"
-          unzip -l release.zip
 
       - name: Create GitHub Release and Upload Asset
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.sha }}
-          name: Release ${{ github.sha }}
+          tag_name: release-${{ github.ref_name }}-${{ github.sha }}
+          name: Release ${{ github.ref_name }} @ ${{ github.sha }}
           files: release.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
