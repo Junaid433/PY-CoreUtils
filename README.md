@@ -82,10 +82,11 @@ $ python src/echo.py -e "Hello\nWorld!"
 
 ---
 
-## 📚 [Full Usage & Features →](docs/usage.md)
+## 📚 [Full Usage, Features & Architecture →](docs/usage.md)
 
 - [Usage Examples](docs/usage.md)
 - [Features](docs/features.md)
+- [Project Architecture](docs/architecture.md)
 
 ---
 
