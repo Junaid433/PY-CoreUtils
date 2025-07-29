@@ -43,16 +43,58 @@ python src/date.py --help
 
 ## 🧑‍💻 Coreutils, Python Style
 
-| Command      | Status |  | Command    | Status |
-| ------------ | ------ |--| ---------- | ------ |
-| `basename`   | ✅     |  | `date`     | ✅     |
-| `mkdir`      | ✅     |  | `echo`     | ✅     |
-| `touch`      | ✅     |  | `whoami`   | ✅     |
-| `rm`         | ✅     |  | `pwd`      | ✅     |
-| `unlink`     | ⏳     |  | `link`     | ⏳     |
-| `uptime`     | ⏳     |  | `groups`   | ⏳     |
-| `users`      | ⏳     |  | `ls`       | ⏳     |
-| `kill`       | ⏳     |  |            |        |
+| Command      | Status |  | Command      | Status |
+| ------------ | ------ |--| ------------ | ------ |
+| `basename`   | ✅     |  | `date`       | ✅     |
+| `echo`       | ✅     |  | `mkdir`      | ✅     |
+| `pwd`        | ✅     |  | `rm`         | ✅     |
+| `touch`      | ✅     |  | `whoami`     | ✅     |
+| `cat`        | ⏳     |  | `chcon`      | ⏳     |
+| `chgrp`      | ⏳     |  | `chmod`      | ⏳     |
+| `chown`      | ⏳     |  | `chroot`     | ⏳     |
+| `cksum`      | ⏳     |  | `comm`       | ⏳     |
+| `cp`         | ⏳     |  | `csplit`     | ⏳     |
+| `cut`        | ⏳     |  | `dd`         | ⏳     |
+| `df`         | ⏳     |  | `dir`        | ⏳     |
+| `dircolors`  | ⏳     |  | `dirname`    | ⏳     |
+| `du`         | ⏳     |  | `env`        | ⏳     |
+| `expand`     | ⏳     |  | `expr`       | ⏳     |
+| `factor`     | ⏳     |  | `false`      | ⏳     |
+| `fmt`        | ⏳     |  | `fold`       | ⏳     |
+| `groups`     | ⏳     |  | `head`       | ⏳     |
+| `hostid`     | ⏳     |  | `id`         | ⏳     |
+| `install`    | ⏳     |  | `join`       | ⏳     |
+| `kill`       | ⏳     |  | `link`       | ⏳     |
+| `ln`         | ⏳     |  | `logname`    | ⏳     |
+| `ls`         | ⏳     |  | `md5sum`     | ⏳     |
+| `mkfifo`     | ⏳     |  | `mknod`      | ⏳     |
+| `mktemp`     | ⏳     |  | `mv`         | ⏳     |
+| `nice`       | ⏳     |  | `nl`         | ⏳     |
+| `nohup`      | ⏳     |  | `nproc`      | ⏳     |
+| `numfmt`     | ⏳     |  | `od`         | ⏳     |
+| `paste`      | ⏳     |  | `pathchk`    | ⏳     |
+| `pinky`      | ⏳     |  | `pr`         | ⏳     |
+| `printenv`   | ⏳     |  | `printf`     | ⏳     |
+| `ptx`        | ⏳     |  | `readlink`   | ⏳     |
+| `realpath`   | ⏳     |  | `rmdir`      | ⏳     |
+| `runcon`     | ⏳     |  | `seq`        | ⏳     |
+| `sha1sum`    | ⏳     |  | `sha224sum`  | ⏳     |
+| `sha256sum`  | ⏳     |  | `sha384sum`  | ⏳     |
+| `sha512sum`  | ⏳     |  | `shred`      | ⏳     |
+| `shuf`       | ⏳     |  | `sleep`      | ⏳     |
+| `sort`       | ⏳     |  | `split`      | ⏳     |
+| `stat`       | ⏳     |  | `stdbuf`     | ⏳     |
+| `stty`       | ⏳     |  | `sum`        | ⏳     |
+| `sync`       | ⏳     |  | `tac`        | ⏳     |
+| `tail`       | ⏳     |  | `tee`        | ⏳     |
+| `test`       | ⏳     |  | `timeout`    | ⏳     |
+| `tr`         | ⏳     |  | `true`       | ⏳     |
+| `tsort`      | ⏳     |  | `tty`        | ⏳     |
+| `uname`      | ⏳     |  | `unexpand`   | ⏳     |
+| `uniq`       | ⏳     |  | `unlink`     | ⏳     |
+| `uptime`     | ⏳     |  | `users`      | ⏳     |
+| `vdir`       | ⏳     |  | `wc`         | ⏳     |
+| `who`        | ⏳     |  | `yes`        | ⏳     |
 
 ---
 
