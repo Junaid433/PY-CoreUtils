@@ -24,14 +24,14 @@ jobs:
 
       - name: Clean and build with Nuitka
         run: |
-          rm -rf build release.zip || true
+          rm -rf build || true
           mkdir -p build
           for f in src/*.py; do
             base=$(basename "$f" .py)
             nuitka --onefile --output-dir=build --output-filename=$base "$f"
           done
           cd build
-          zip -r release.zip .
+          zip release.zip $(find . -maxdepth 1 -type f ! -name "*.*" -executable)
 
       - name: Create GitHub Release and Upload Asset
         uses: softprops/action-gh-release@v2
