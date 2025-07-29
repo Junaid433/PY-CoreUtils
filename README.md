@@ -37,7 +37,7 @@ It’s perfect for:
 | `date`     | ✅ DONE |
 | `echo`     | ✅ DONE |
 | `whoami`   | ✅ DONE |
-| `pwd`      | ⏳ TODO |
+| `pwd`      | ✅ DONE |
 | `chmod`    | ⏳ TODO |
 
 ---
@@ -63,6 +63,7 @@ It’s perfect for:
 * `basename`: Multiple file support and suffix stripping
 * `rm`: Full GNU-style recursive, interactive, and safe deletion
 * `date`: GNU-style formatting, parsing, reference file, UTC, batch, and locale support
+* `pwd`: Logical/physical mode, POSIXLY_CORRECT, symlink handling
 
 ---
 
@@ -109,6 +110,15 @@ python date.py -I                         # ISO 8601 output
 python date.py --rfc-3339 seconds         # RFC 3339 output
 python date.py -R                         # RFC 5322 (email) output
 python date.py --help                     # show help information
+```
+
+### `pwd` – Print current directory
+
+```bash
+python pwd.py                             # print current directory (physical, default)
+python pwd.py -L                          # logical mode (uses $PWD if valid)
+python pwd.py -P                          # physical mode (resolves symlinks)
+python pwd.py --help                      # show help information
 ```
 
 ### `touch` – Update file timestamps
@@ -188,6 +198,7 @@ python touch.py --help
 python basename.py --help
 python rm.py --help
 python date.py --help
+python pwd.py --help
 ```
 
 Or run individual scripts as needed.
@@ -237,4 +248,4 @@ Licensed under the [GNU GPL v3 or later](https://www.gnu.org/licenses/gpl-3.0.ht
 
 ## 🔍 Keywords
 
-`gnu coreutils` `python coreutils` `unix utilities` `cross-platform cli` `command-line tools` `mkdir in python` `basename` `touch` `chmod` `rm` `date` `pure python` `no dependencies` `drop-in replacement` `coreutils alternative` `cli tools`
+`gnu coreutils` `python coreutils` `unix utilities` `cross-platform cli` `command-line tools` `mkdir in python` `basename` `touch` `chmod` `rm` `date` `pwd` `pure python` `no dependencies` `drop-in replacement` `coreutils alternative` `cli tools`
