@@ -2,7 +2,7 @@ import subprocess
 import sys
 import os
 
-SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'echo.py'))
+SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'echo.py'))
 
 def run_cli(args, env=None):
     result = subprocess.run([sys.executable, SCRIPT] + args, capture_output=True, text=True, env=env)

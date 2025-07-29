@@ -4,7 +4,7 @@ import os
 import tempfile
 import shutil
 
-SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'mkdir.py'))
+SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'mkdir.py'))
 
 def run_cli(args):
     result = subprocess.run([sys.executable, SCRIPT] + args, capture_output=True, text=True)

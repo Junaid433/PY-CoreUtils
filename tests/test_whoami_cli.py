@@ -3,7 +3,7 @@ import sys
 import os
 import pwd
 
-SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'whoami.py'))
+SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'whoami.py'))
 
 def run_cli(args):
     result = subprocess.run([sys.executable, SCRIPT] + args, capture_output=True, text=True)

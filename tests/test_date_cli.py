@@ -4,7 +4,7 @@ import os
 import time
 from datetime import datetime
 
-SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'date.py'))
+SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'date.py'))
 
 def run_cli(args, input_text=None):
     return subprocess.run([sys.executable, SCRIPT] + args, capture_output=True, text=True, input=input_text)

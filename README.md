@@ -31,9 +31,9 @@
 ```bash
 git clone https://github.com/Junaid433/PYCoreUtils.git
 cd PYCoreUtils
-python mkdir.py --help
-python rm.py --help
-python date.py --help
+python src/mkdir.py --help
+python src/rm.py --help
+python src/date.py --help
 ```
 
 ---
@@ -56,12 +56,12 @@ python date.py --help
 ## 🌈 CLI Showcase
 
 ```bash
-$ python rm.py -rf build/
-$ python date.py '+%Y-%m-%d %H:%M:%S'
-$ python mkdir.py -p src/utils
-$ python pwd.py
-$ python basename.py /usr/bin/python3
-$ python echo.py -e "Hello\nWorld!"
+$ python src/rm.py -rf build/
+$ python src/date.py '+%Y-%m-%d %H:%M:%S'
+$ python src/mkdir.py -p src/utils
+$ python src/pwd.py
+$ python src/basename.py /usr/bin/python3
+$ python src/echo.py -e "Hello\nWorld!"
 ```
 
 ---

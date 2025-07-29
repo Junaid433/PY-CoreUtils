@@ -2,7 +2,7 @@ import subprocess
 import sys
 import os
 
-SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'basename.py'))
+SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'basename.py'))
 
 
 def run_cli(args):
