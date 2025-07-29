@@ -4,6 +4,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org/)
+[![CI](https://github.com/Junaid433/PYCoreUtils/actions/workflows/python-tests.yml/badge.svg)](https://github.com/Junaid433/PYCoreUtils/actions)
 
 ---
 
@@ -126,7 +127,7 @@ python whoami.py --version                # show version information
 
 ### Requirements
 
-* Python **3.6+**
+* Python **3.6+** (tested up to 3.13)
 * No third-party libraries (pure `stdlib`)
 
 ### Architecture
@@ -167,11 +168,26 @@ Or run individual scripts as needed.
 
 * 🧹 Follows [PEP 8](https://peps.python.org/pep-0008/)
 * 📘 Inline docstrings and typing hints
-* 🧪 Manual testing across:
+* 🧪 Manual and automated testing:
+  * Automated: [pytest](https://docs.pytest.org/) (see below)
+  * Manual: GNU output diffing, edge cases, platform variations
 
-  * GNU output diffing
-  * Edge cases and invalid input
-  * Platform variations (Windows/macOS/Linux)
+### Running Tests
+
+To run all tests locally:
+
+```bash
+pip install pytest
+pytest
+```
+
+Tests are also run automatically on every push and pull request via [GitHub Actions](https://github.com/Junaid433/PYCoreUtils/actions).
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open issues or pull requests for bug fixes, new features, or improvements. Make sure to add or update tests for any code changes.
 
 ---
 
