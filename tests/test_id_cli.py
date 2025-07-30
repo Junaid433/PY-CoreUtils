@@ -1,76 +1,75 @@
+import subprocess
 import sys
-from unittest import mock
+import os
+import pwd
+import grp
+import pytest
 
-import src.id as id_mod
+ID_SCRIPT = os.path.join(os.path.dirname(__file__), '../src/id.py')
+PYTHON_EXEC = sys.executable
 
-def test_get_user_by_spec_name():
-    with mock.patch('pwd.getpwnam') as mock_getpwnam:
-        mock_getpwnam.return_value = mock.Mock(pw_name='testuser', pw_uid=1000, pw_gid=1000)
-        user, err = id_mod.get_user_by_spec('testuser')
-        assert err is None
-        assert user.pw_name == 'testuser'
+def run_id_cli(*args):
+    cmd = [PYTHON_EXEC, ID_SCRIPT] + list(args)
+    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    return result
 
-def test_get_user_by_spec_uid():
-    with mock.patch('pwd.getpwuid') as mock_getpwuid:
-        mock_getpwuid.return_value = mock.Mock(pw_name='testuser', pw_uid=1000, pw_gid=1000)
-        user, err = id_mod.get_user_by_spec('1000')
-        assert err is None
-        assert user.pw_uid == 1000
+def test_id_cli_default():
+    result = run_id_cli()
+    assert result.returncode == 0
+    # Should contain uid= and gid= for current user
+    assert f"uid={os.getuid()}" in result.stdout
+    assert f"gid={os.getgid()}" in result.stdout
 
-def test_get_user_by_spec_invalid():
-    with mock.patch('pwd.getpwnam', side_effect=KeyError):
-        user, err = id_mod.get_user_by_spec('nouser')
-        assert user is None
-        assert "no such user" in err
+@pytest.mark.parametrize("flag,expected", [
+    ("-u", str(os.getuid())),
+    ("-g", str(os.getgid())),
+])
+def test_id_cli_uid_gid(flag, expected):
+    result = run_id_cli(flag)
+    assert result.returncode == 0
+    assert result.stdout.strip() == expected
 
-def test_print_id_user_name(capsys):
-    with mock.patch('pwd.getpwuid') as mock_getpwuid:
-        mock_getpwuid.return_value = mock.Mock(pw_name='testuser')
-        id_mod.print_id(1000, 'user', use_name=True)
-        out, _ = capsys.readouterr()
-        assert out == 'testuser'
+def test_id_cli_user_name():
+    result = run_id_cli("-un")
+    assert result.returncode == 0
+    assert result.stdout.strip() == pwd.getpwuid(os.getuid()).pw_name
 
-def test_print_id_group_name(capsys):
-    with mock.patch('grp.getgrgid') as mock_getgrgid:
-        mock_getgrgid.return_value = mock.Mock(gr_name='testgroup')
-        id_mod.print_id(1000, 'group', use_name=True)
-        out, _ = capsys.readouterr()
-        assert out == 'testgroup'
+def test_id_cli_group_name():
+    result = run_id_cli("-gn")
+    assert result.returncode == 0
+    assert result.stdout.strip() == grp.getgrgid(os.getgid()).gr_name
 
-def test_print_id_user_number(capsys):
-    id_mod.print_id(1000, 'user', use_name=False)
-    out, _ = capsys.readouterr()
-    assert out == '1000'
+def test_id_cli_groups_numbers():
+    result = run_id_cli("-G")
+    assert result.returncode == 0
+    groups = os.getgroups()
+    output = set(map(int, result.stdout.strip().split()))
+    assert set(groups) <= output  # output may include primary group
 
-def test_print_group_list_names(capsys):
-    with mock.patch('pwd.getpwnam') as mock_getpwnam, \
-         mock.patch('os.getgrouplist') as mock_getgrouplist, \
-         mock.patch('grp.getgrgid') as mock_getgrgid:
-        mock_getpwnam.return_value = mock.Mock(pw_gid=1000)
-        mock_getgrouplist.return_value = [1000, 1001]
-        mock_getgrgid.side_effect = [mock.Mock(gr_name='group1'), mock.Mock(gr_name='group2')]
-        id_mod.print_group_list('testuser', use_name=True, delimiter=',')
-        out, _ = capsys.readouterr()
-        assert out == 'group1,group2'
+def test_id_cli_groups_names():
+    result = run_id_cli("-Gn")
+    assert result.returncode == 0
+    group_names = [grp.getgrgid(gid).gr_name for gid in os.getgroups() if gid in [g.gr_gid for g in grp.getgrall()]]
+    output = result.stdout.strip().split()
+    for name in group_names:
+        assert name in output
 
-def test_print_group_list_numbers(capsys):
-    with mock.patch('pwd.getpwnam') as mock_getpwnam, \
-         mock.patch('os.getgrouplist') as mock_getgrouplist:
-        mock_getpwnam.return_value = mock.Mock(pw_gid=1000)
-        mock_getgrouplist.return_value = [1000, 1001]
-        id_mod.print_group_list('testuser', use_name=False, delimiter=' ')
-        out, _ = capsys.readouterr()
-        assert out == '1000 1001'
+def test_id_cli_help():
+    result = run_id_cli("--help")
+    assert result.returncode == 0
+    assert "Usage:" in result.stdout
 
-def test_print_full_info(capsys):
-    with mock.patch('pwd.getpwuid') as mock_getpwuid, \
-         mock.patch('grp.getgrgid') as mock_getgrgid, \
-         mock.patch('os.getgroups') as mock_getgroups:
-        mock_getpwuid.side_effect = [mock.Mock(pw_name='user')] * 2
-        mock_getgrgid.side_effect = [mock.Mock(gr_name='group')] * 2
-        mock_getgroups.return_value = [1000, 1001]
-        id_mod.print_full_info(1000, 1000, 1000, 1000)
-        out, _ = capsys.readouterr()
-        assert 'uid=1000(user)' in out
-        assert 'gid=1000(group)' in out
-        assert 'groups=1000(group),1001(group)' in out
+def test_id_cli_version():
+    result = run_id_cli("--version")
+    assert result.returncode == 0
+    assert "Python port of GNU coreutils" in result.stdout
+
+def test_id_cli_invalid_user():
+    result = run_id_cli("nouserdoesnotexist")
+    assert result.returncode == 1
+    assert "no such user" in result.stderr
+
+def test_id_cli_conflicting_options():
+    result = run_id_cli("-u", "-g")
+    assert result.returncode == 1
+    assert "cannot print 'only' of more than one choice" in result.stderr
