@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -17,27 +18,46 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Upgrade pip and install Nuitka
+      - name: Upgrade pip and install Nuitka with dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y wine64
           python -m pip install --upgrade pip
           pip install nuitka
 
-      - name: Clean and build with Nuitka
+      - name: Clean and build Linux binaries
         run: |
           rm -rf build || true
-          mkdir -p build
+          mkdir -p build/linux
           for f in src/*.py; do
             base=$(basename "$f" .py)
-            nuitka --onefile --output-dir=build --output-filename=$base "$f"
+            nuitka --onefile --output-dir=build/linux --output-filename=$base "$f"
           done
-          cd build
-          zip release.zip $(find . -maxdepth 1 -type f ! -name "*.*" -executable)
+          cd build/linux
+          zip ../release-linux.zip $(find . -maxdepth 1 -type f ! -name "*.*" -executable)
 
-      - name: Create GitHub Release and Upload Asset
+      - name: Cross-compile Windows binaries with Nuitka
+        run: |
+          mkdir -p build/windows
+          for f in src/*.py; do
+            base=$(basename "$f" .py)
+            nuitka \
+              --onefile \
+              --windows-target=x86_64 \
+              --output-dir=build/windows \
+              --output-filename=$base.exe \
+              "$f"
+          done
+          cd build/windows
+          zip ../release-windows.zip *.exe
+
+      - name: Create GitHub Release and Upload Assets
         uses: softprops/action-gh-release@v2
         with:
           tag_name: release-${{ github.ref_name }}-${{ github.sha }}
-          name: BINARY Release ${{ github.ref_name }} @ ${{ github.sha }}
-          files: build/release.zip
+          name: Cross-platform Binaries for ${{ github.ref_name }} @ ${{ github.sha }}
+          files: |
+            build/release-linux.zip
+            build/release-windows.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
