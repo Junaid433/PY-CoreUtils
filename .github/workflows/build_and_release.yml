@@ -37,7 +37,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: release-${{ github.ref_name }}-${{ github.sha }}
-          name: Release ${{ github.ref_name }} @ ${{ github.sha }}
+          name: BINARY Release ${{ github.ref_name }} @ ${{ github.sha }}
           files: build/release.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
