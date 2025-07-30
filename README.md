@@ -65,7 +65,8 @@ python src/nproc.py --help
 | `factor`     | ⏳     |  | `false`      | ⏳     |
 | `fmt`        | ⏳     |  | `fold`       | ⏳     |
 | `groups`     | ⏳     |  | `head`       | ⏳     |
-| `hostid`     | ⏳     |  | `id`         | ⏳     |
+| `hostid`     | ✅     |  | `hostname`   | ✅     |
+| `id`         | ⏳     |  | `install`    | ⏳     |
 | `install`    | ⏳     |  | `join`       | ⏳     |
 | `kill`       | ⏳     |  | `link`       | ⏳     |
 | `ln`         | ⏳     |  | `logname`    | ⏳     |

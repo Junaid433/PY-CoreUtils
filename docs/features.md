@@ -78,3 +78,12 @@
 * Lists signals (`-l`), converts names/numbers, and prints a table (`-t`).
 * Provides help/version output and matches GNU kill behavior.
 * Returns nonzero exit code for invalid signals, PIDs, or errors.
+
+### `hostid`
+* Prints the hexadecimal identifier for the current host.
+* Matches GNU hostid behavior and output.
+
+### `hostname`
+* Prints the current system's hostname.
+* Can set the system's hostname (if run with sufficient privileges).
+* Matches GNU hostname behavior and output.

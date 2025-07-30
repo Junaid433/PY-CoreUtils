@@ -104,10 +104,6 @@ python src/sleep.py --help                    # show help information
 python src/sleep.py --version                 # show version information
 ```
 
-* Accepts multiple time intervals (e.g., `1m 30s` sums to 90 seconds).
-* Supported suffixes: `s` (seconds, default), `m` (minutes), `h` (hours), `d` (days).
-* Returns nonzero exit code for invalid intervals or errors.
-
 ## `kill` – Send signals to processes, or list signals
 
 ```bash
@@ -119,4 +115,12 @@ python src/kill.py -s HUP 5678              # send SIGHUP to PID 5678
 python src/kill.py 4321                     # send SIGTERM (default) to PID 4321
 python src/kill.py --help                   # show help information
 python src/kill.py --version                # show version information
+```
+
+## `hostid` – print the hexadecimal identifier for the current host
+
+```bash
+python src/hostid.py                         # print the hexadecimal identifier
+python src/hostid.py --help                  # show help information
+python src/hostid.py --version               # show version information
 ```
