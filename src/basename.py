@@ -1,5 +1,4 @@
 #!/usr/bin/env python3 
-
 """"
 basename - Strip directory and suffix from file names
 Python port of GNU coreutils basename 

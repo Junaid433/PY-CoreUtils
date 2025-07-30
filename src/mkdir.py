@@ -1,5 +1,4 @@
 #!/usr/bin/env python3 
-
 """"
 mkdir - make directories
 Python port of GNU coreutils mkdir

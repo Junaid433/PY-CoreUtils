@@ -91,3 +91,32 @@ python src/nproc.py --ignore=2                # exclude 2 processing units
 python src/nproc.py --help                    # show help information
 python src/nproc.py --version                 # show version information
 ```
+
+## `sleep` – Pause for a specified amount of time
+
+```bash
+python src/sleep.py 5                         # sleep for 5 seconds
+python src/sleep.py 2m                        # sleep for 2 minutes
+python src/sleep.py 1h                        # sleep for 1 hour
+python src/sleep.py 1.5d                      # sleep for 1.5 days
+python src/sleep.py 1m 30s                    # sleep for 1 minute and 30 seconds (sum)
+python src/sleep.py --help                    # show help information
+python src/sleep.py --version                 # show version information
+```
+
+* Accepts multiple time intervals (e.g., `1m 30s` sums to 90 seconds).
+* Supported suffixes: `s` (seconds, default), `m` (minutes), `h` (hours), `d` (days).
+* Returns nonzero exit code for invalid intervals or errors.
+
+## `kill` – Send signals to processes, or list signals
+
+```bash
+python src/kill.py -l                       # list all signal names
+python src/kill.py -l HUP 9                 # convert signal names/numbers
+python src/kill.py -t                       # print a table of signals
+python src/kill.py -9 1234                  # send SIGKILL to PID 1234
+python src/kill.py -s HUP 5678              # send SIGHUP to PID 5678
+python src/kill.py 4321                     # send SIGTERM (default) to PID 4321
+python src/kill.py --help                   # show help information
+python src/kill.py --version                # show version information
+```

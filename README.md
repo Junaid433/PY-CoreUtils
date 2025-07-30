@@ -50,8 +50,9 @@ python src/nproc.py --help
 | `echo`       | ✅     |  | `mkdir`      | ✅     |
 | `pwd`        | ✅     |  | `rm`         | ✅     |
 | `touch`      | ✅     |  | `whoami`     | ✅     |
-| `nproc`      | ✅     |  |              |        |
-| `cat`        | ⏳     |  | `chcon`      | ⏳     |
+| `nproc`      | ✅     |  | `sleep`      | ✅     |
+| `kill`       | ✅     |  | `cat`        | ⏳     |
+| `chcon`      | ⏳     |  |              |        |
 | `chgrp`      | ⏳     |  | `chmod`      | ⏳     |
 | `chown`      | ⏳     |  | `chroot`     | ⏳     |
 | `cksum`      | ⏳     |  | `comm`       | ⏳     |
@@ -112,6 +113,9 @@ $ python src/basename.py /usr/bin/python3
 $ python src/echo.py -e "Hello\nWorld!"
 $ python src/nproc.py --all
 $ python src/nproc.py --ignore=2
+$ python src/sleep.py 2m
+$ python src/kill.py -l
+$ python src/kill.py -s HUP 5678
 ```
 </details>
 
