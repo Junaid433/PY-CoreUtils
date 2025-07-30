@@ -124,3 +124,19 @@ python src/hostid.py                         # print the hexadecimal identifier
 python src/hostid.py --help                  # show help information
 python src/hostid.py --version               # show version information
 ```
+
+## `id` – Print user and group information
+
+```bash
+python src/id.py                             # print full info for current user
+python src/id.py -u                          # print effective user ID
+python src/id.py -g                          # print effective group ID
+python src/id.py -G                          # print all group IDs
+python src/id.py -n -u                       # print user name
+python src/id.py -n -g                       # print group name
+python src/id.py -n -G                       # print all group names
+python src/id.py username                    # print info for specified user
+python src/id.py 1000                        # print info for UID 1000
+python src/id.py --help                      # show help information
+python src/id.py --version                   # show version information
+```

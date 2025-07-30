@@ -87,3 +87,10 @@
 * Prints the current system's hostname.
 * Can set the system's hostname (if run with sufficient privileges).
 * Matches GNU hostname behavior and output.
+
+### `id`
+* Prints real and effective user and group IDs, or all groups for a user.
+* Supports `-u` (user), `-g` (group), `-G` (groups), `-n` (name), `-r` (real), `-z` (NUL delimiter), and more.
+* Resolves names or prints numeric IDs, matching GNU id output and error handling.
+* Can print info for the current user or a specified user/UID.
+* Provides help/version output and matches GNU id behavior and output.
