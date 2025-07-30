@@ -37,6 +37,7 @@ cd PY-CoreUtils
 python src/mkdir.py --help
 python src/rm.py --help
 python src/date.py --help
+python src/nproc.py --help
 ```
 
 ---
@@ -49,6 +50,7 @@ python src/date.py --help
 | `echo`       | ✅     |  | `mkdir`      | ✅     |
 | `pwd`        | ✅     |  | `rm`         | ✅     |
 | `touch`      | ✅     |  | `whoami`     | ✅     |
+| `nproc`      | ✅     |  |              |        |
 | `cat`        | ⏳     |  | `chcon`      | ⏳     |
 | `chgrp`      | ⏳     |  | `chmod`      | ⏳     |
 | `chown`      | ⏳     |  | `chroot`     | ⏳     |
@@ -70,7 +72,7 @@ python src/date.py --help
 | `mkfifo`     | ⏳     |  | `mknod`      | ⏳     |
 | `mktemp`     | ⏳     |  | `mv`         | ⏳     |
 | `nice`       | ⏳     |  | `nl`         | ⏳     |
-| `nohup`      | ⏳     |  | `nproc`      | ⏳     |
+| `nohup`      | ⏳     |  |              |        |
 | `numfmt`     | ⏳     |  | `od`         | ⏳     |
 | `paste`      | ⏳     |  | `pathchk`    | ⏳     |
 | `pinky`      | ⏳     |  | `pr`         | ⏳     |
@@ -84,7 +86,7 @@ python src/date.py --help
 | `shuf`       | ⏳     |  | `sleep`      | ⏳     |
 | `sort`       | ⏳     |  | `split`      | ⏳     |
 | `stat`       | ⏳     |  | `stdbuf`     | ⏳     |
-| `stty`       | ⏳     |  | `sum`        | ⏳     |
+| `stty`       | ��     |  | `sum`        | ⏳     |
 | `sync`       | ⏳     |  | `tac`        | ⏳     |
 | `tail`       | ⏳     |  | `tee`        | ⏳     |
 | `test`       | ⏳     |  | `timeout`    | ⏳     |
@@ -108,6 +110,8 @@ $ python src/mkdir.py -p src/utils
 $ python src/pwd.py
 $ python src/basename.py /usr/bin/python3
 $ python src/echo.py -e "Hello\nWorld!"
+$ python src/nproc.py --all
+$ python src/nproc.py --ignore=2
 ```
 </details>
 

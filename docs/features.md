@@ -20,3 +20,4 @@
 * `rm`: Full GNU-style recursive, interactive, and safe deletion
 * `date`: GNU-style formatting, parsing, reference file, UTC, batch, and locale support
 * `pwd`: Logical/physical mode, POSIXLY_CORRECT, symlink handling
+* `nproc`: Prints the number of processing units available to the current process, supports `--all` and `--ignore=N` options, and matches GNU nproc behavior

@@ -81,3 +81,13 @@ python src/whoami.py                          # outputs current username
 python src/whoami.py --help                   # show help information
 python src/whoami.py --version                # show version information
 ```
+
+## `nproc` – Print the number of processing units available
+
+```bash
+python src/nproc.py                           # number available to current process
+python src/nproc.py --all                     # number of installed processors
+python src/nproc.py --ignore=2                # exclude 2 processing units
+python src/nproc.py --help                    # show help information
+python src/nproc.py --version                 # show version information
+```
