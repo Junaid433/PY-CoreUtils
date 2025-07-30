@@ -60,6 +60,7 @@ jobs:
           pip install nuitka
 
       - name: Build Windows Binaries
+        shell: cmd
         run: |
           mkdir build\windows
           for %%f in (src\*.py) do (
