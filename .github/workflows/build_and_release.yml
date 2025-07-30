@@ -6,8 +6,10 @@ on:
       - '**'
 
 jobs:
-  build-and-release:
+  build-linux:
     runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.release.outputs.upload_url }}
 
     steps:
       - name: Checkout repository
@@ -18,16 +20,13 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Upgrade pip and install Nuitka with dependencies
+      - name: Upgrade pip and install Nuitka
         run: |
-          sudo apt-get update
-          sudo apt-get install -y wine64
           python -m pip install --upgrade pip
           pip install nuitka
 
-      - name: Clean and build Linux binaries
+      - name: Build Linux Binaries
         run: |
-          rm -rf build || true
           mkdir -p build/linux
           for f in src/*.py; do
             base=$(basename "$f" .py)
@@ -36,28 +35,74 @@ jobs:
           cd build/linux
           zip ../release-linux.zip $(find . -maxdepth 1 -type f ! -name "*.*" -executable)
 
-      - name: Cross-compile Windows binaries with Nuitka
+      - name: Upload Linux ZIP as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-linux
+          path: build/release-linux.zip
+
+  build-windows:
+    runs-on: windows-latest
+    needs: build-linux
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Upgrade pip and install Nuitka
         run: |
-          mkdir -p build/windows
-          for f in src/*.py; do
-            base=$(basename "$f" .py)
-            nuitka \
-              --onefile \
-              --windows-target=x86_64 \
-              --output-dir=build/windows \
-              --output-filename=$base.exe \
-              "$f"
-          done
-          cd build/windows
-          zip ../release-windows.zip *.exe
+          python -m pip install --upgrade pip
+          pip install nuitka
+
+      - name: Build Windows Binaries
+        run: |
+          mkdir build\windows
+          for %%f in (src\*.py) do (
+            nuitka --onefile --output-dir=build/windows --output-filename=%%~nf.exe %%f
+          )
+          cd build\windows
+          powershell Compress-Archive -Path *.exe -DestinationPath ..\release-windows.zip
+
+      - name: Upload Windows ZIP as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-windows
+          path: build/release-windows.zip
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [build-linux, build-windows]
+
+    steps:
+      - name: Download Linux Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-linux
+          path: build
+
+      - name: Download Windows Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-windows
+          path: build
+
+      - name: Rename files for GitHub Release
+        run: |
+          mv build/release-linux.zip build/binary-linux.zip
+          mv build/release-windows.zip build/binary-windows.zip
 
       - name: Create GitHub Release and Upload Assets
         uses: softprops/action-gh-release@v2
         with:
           tag_name: release-${{ github.ref_name }}-${{ github.sha }}
-          name: Cross-platform Binaries for ${{ github.ref_name }} @ ${{ github.sha }}
+          name: Cross-platform Binaries ${{ github.ref_name }} @ ${{ github.sha }}
           files: |
-            build/release-linux.zip
-            build/release-windows.zip
+            build/binary-linux.zip
+            build/binary-windows.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
