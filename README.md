@@ -96,7 +96,7 @@ python src/nproc.py --help
 | `tsort`      | ⏳     |  | `tty`        | ⏳     |
 | `uname`      | ⏳     |  | `unexpand`   | ⏳     |
 | `uniq`       | ⏳     |  | `unlink`     | ⏳     |
-| `uptime`     | ⏳     |  | `users`      | ⏳     |
+| `uptime`     | ⏳     |  | `users`      | ✅     |
 | `vdir`       | ⏳     |  | `wc`         | ⏳     |
 | `who`        | ⏳     |  | `yes`        | ⏳     |
 

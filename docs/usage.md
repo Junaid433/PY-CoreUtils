@@ -140,3 +140,10 @@ python src/id.py 1000                        # print info for UID 1000
 python src/id.py --help                      # show help information
 python src/id.py --version                   # show version information
 ```
+
+## `users` – Print login names of users currently logged in
+
+```bash
+python src/users.py                          # list users from default utmp file
+python src/users.py /var/log/wtmp            # list users from wtmp log
+```

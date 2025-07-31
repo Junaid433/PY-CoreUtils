@@ -94,3 +94,8 @@
 * Resolves names or prints numeric IDs, matching GNU id output and error handling.
 * Can print info for the current user or a specified user/UID.
 * Provides help/version output and matches GNU id behavior and output.
+
+### `users`
+*Prints the login names of users currently logged in.
+* Supports specifying an alternative `utmp` or `wtmp` file.
+* Matches GNU users behavior and output.
