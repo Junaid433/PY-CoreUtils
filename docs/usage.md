@@ -147,3 +147,11 @@ python src/id.py --version                   # show version information
 python src/users.py                          # list users from default utmp file
 python src/users.py /var/log/wtmp            # list users from wtmp log
 ```
+
+## `uptime` - tell how long the system has been running
+
+```bash
+python src/uptime.py                         # show system uptime and load averages
+python src/uptime.py --help                  # show help information
+python src/uptime.py --version               # show version information
+```

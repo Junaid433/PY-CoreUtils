@@ -99,3 +99,10 @@
 *Prints the login names of users currently logged in.
 * Supports specifying an alternative `utmp` or `wtmp` file.
 * Matches GNU users behavior and output.
+
+### `uptime`
+* Tells how long the system has been running.
+* Shows current time, uptime duration, number of logged-in users, and system load averages.
+* Cross-platform support for getting boot time and user counts.
+* Matches GNU uptime output format.
+* Matches GNU users behavior and output.

@@ -2,6 +2,7 @@ import subprocess
 import sys
 import os
 import struct
+import pytest
 
 SCRIPT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'users.py'))
 
