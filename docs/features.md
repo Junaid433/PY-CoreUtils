@@ -105,4 +105,9 @@
 * Shows current time, uptime duration, number of logged-in users, and system load averages.
 * Cross-platform support for getting boot time and user counts.
 * Matches GNU uptime output format.
+
+### `yes`
+* Repeatedly outputs a string until killed.
+* Defaults to 'y' if no string is provided.
+* Handles piped output gracefully (e.g., `yes | head`).
 * Matches GNU users behavior and output.

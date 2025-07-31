@@ -154,4 +154,11 @@ python src/users.py /var/log/wtmp            # list users from wtmp log
 python src/uptime.py                         # show system uptime and load averages
 python src/uptime.py --help                  # show help information
 python src/uptime.py --version               # show version information
+
+## `yes` – Repeatedly output a string
+
+```bash
+python src/yes | head -n 5                   # outputs 'y' five times
+python src/yes "hello world" | head -n 3     # outputs 'hello world' three times
+python src/yes --help                        # show help information
 ```

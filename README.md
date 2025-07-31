@@ -98,7 +98,7 @@ python src/nproc.py --help
 | `uniq`       | ⏳     |  | `unlink`     | ⏳     |
 | `uptime`     | ✅     |  | `users`      | ✅     |
 | `vdir`       | ⏳     |  | `wc`         | ⏳     |
-| `who`        | ⏳     |  | `yes`        | ⏳     |
+| `who`        | ⏳     |  | `yes`        | ✅     |
 
 ---
 
